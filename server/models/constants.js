@@ -1,0 +1,11 @@
+export const ROLES = { SUPER: 'super_admin', ADMIN: 'admin', RECEPTION: 'receptionist', ACCOUNTANT: 'accountant', HOUSEKEEPING: 'housekeeping' };
+export const ROLE_LIST = Object.values(ROLES);
+export const ROOM_TYPES = ['single', 'double', 'twin', 'deluxe', 'suite', 'family', 'presidential_suite'];
+export const ROOM_STATUSES = ['available', 'reserved', 'occupied', 'cleaning', 'maintenance'];
+export const HK_STATUSES = ['dirty', 'cleaning', 'clean', 'inspection'];
+export const RES_STATUSES = ['pending', 'confirmed', 'checked_in', 'checked_out', 'cancelled', 'no_show'];
+export const ACTIVE_RES = ['pending', 'confirmed', 'checked_in'];
+export const PAY_STATUSES = ['pending', 'completed', 'failed', 'refunded', 'partially_refunded'];
+export const COUNTED_PAY = ['completed', 'partially_refunded', 'refunded']; // statuses whose (amount - refunded) counts as collected
+export const BASE_METHODS = ['cash', 'card', 'bank_transfer'];
+export const ID_TYPES = ['national_id', 'passport', 'driver_license', 'other'];

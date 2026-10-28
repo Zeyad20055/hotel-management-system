@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { font-family: 'Segoe UI', Tahoma, 'Noto Sans Arabic', system-ui, -apple-system, sans-serif; background: #f5f4f2; color: #1f2937; }
+:focus-visible { outline: 2px solid #c9a227; outline-offset: 2px; }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-dark; }
+  .btn-gold { @apply btn bg-gold text-ink hover:bg-gold-dark; }
+  .btn-ghost { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-sm { @apply gap-1 px-2.5 py-1 text-xs; }
+  .input { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/30 disabled:bg-slate-100; }
+  .label { @apply mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-soft; }
+  .th { @apply whitespace-nowrap bg-slate-50 px-4 py-3 text-start text-xs font-semibold uppercase tracking-wide text-slate-500; }
+  .td { @apply px-4 py-3 text-sm text-slate-700; }
+  .err { @apply mt-1 text-xs text-red-600; }
+}
+
+.print-only { display: none; }
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; inset-inline-start: 0; top: 0; width: 100%; background: #fff; color: #000; padding: 16px; }
+  .print-only { display: block; }
+  .no-print { display: none !important; }
+}
